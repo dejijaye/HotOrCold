@@ -1,0 +1,64 @@
+html {
+	height: 100%;
+	background: url(../image/congruent_pentagon.png) repeat;
+	background-size: cover;
+}
+
+h1 {
+	font-size: 3em;
+	font-family: Arial, tahoma, sans-serif;
+	font-weight: bold;
+	text-align: center ;
+	color: white;
+	margin-top: 40px;
+}
+
+#hot {
+	color: red;
+}
+
+#cold {
+	color: blue;
+}
+
+h2 {
+	font-family: 'century gothic', sans-serif;
+	font-size: 1em;
+	color: turquoise;
+	text-align: center;
+	padding: 20px 20px;
+}
+
+#inputbox {
+	/*width: 30%*/
+	margin: 80px auto;
+	height: 30%;
+	text-align: center;
+	color: lightgrey;
+}
+
+
+#boxgroup {
+	border: 1px solid red;
+	width: 300px;
+	margin: 0 auto;
+	background-color: rgba(120,44,230,0.7);
+	padding: 50px;
+	border-radius: 10px;
+}
+
+#guess {
+	height: 30px;
+	width: 50px;
+	text-align: center;
+	margin: 20px;
+}
+
+button {
+	width: 120px;
+	height: 60px;
+	border-radius: 8px;
+	margin: 10px;
+	font-size: 1.3em;
+	text-align: center;
+}

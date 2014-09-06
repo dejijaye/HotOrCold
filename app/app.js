@@ -13,7 +13,7 @@ var number = parseInt(Math.random() * 101);
 
 var feedback = function (num) {
 	var previousguess = num;
-	var newguess = parseInt(prompt("whats your guess?","Enter a number between 1 and 100"));
+	var newguess = parseInt(prompt("whats your guess?","Enter a number between 1 and 100"), 10);
 	if(newguess === number) {
 		alert("Weldone!!! You guessed right.");
 	}
@@ -28,7 +28,7 @@ var feedback = function (num) {
 }
 
 var checkguess = function() {
-	var guess = parseInt(prompt("what's your guess?","Enter a number between 1 and 100"));
+	var guess = parseInt(prompt("what's your guess?","Enter a number between 1 and 100"), 10);
 	if ( guess !== " " && guess !== null && guess < 101 && !(guess < 0) ) {
 		if (guess === number) {
 				alert("Waoh! You guessed right.");
