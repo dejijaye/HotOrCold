@@ -1,6 +1,7 @@
 var number;
 var initguess;
 var newguess;
+// var diff;
 
 $("#newgame").click(function(){
 		$("#submitguess").show("slow");
@@ -10,6 +11,12 @@ $("#newgame").click(function(){
 		number = parseInt(Math.random() * 101);
 		console.log(number);
 });
+
+
+// var displaybar = function(percent) {
+// 	var progbarwidth = percent * $("#meterbar").width()/100;
+// 	$("meter").width(progbarwidth);
+// }
 
 var feedback =function(num)  {
 	var previousguess = num;
@@ -21,7 +28,7 @@ var feedback =function(num)  {
 		}
 
 		else {
-
+			// var diff = (100 - Math.abs(number - initguess));
 			if (newguess === number) {
 				$("label").text("Waoh! You guessed right.");
 				$("#submitguess").hide("slow");
@@ -29,19 +36,24 @@ var feedback =function(num)  {
 
 			else if (Math.abs(number - newguess) < Math.abs(number - previousguess)) {
 				$("label").text("You are getting hotter.");
+				// displaybar(diff)
 				feedback(newguess);
 			}
 
 			else if (Math.abs(number - newguess) === Math.abs(number - previousguess)) {
 				$("label").text("You are warm.");
+				// displaybar(diff);
 				feedback(newguess);
 			}
 
 			else {
 				$("label").text("You are getting colder.");
+				// displaybar(diff);
 				feedback(newguess);
 			}
 		}
+		// var diff = (100 - Math.abs(number - initguess))
+		// displaybar(diff);
 	})
 
 }
@@ -64,12 +76,16 @@ var validate = function() {
 			if (initguess === number) {
 				$("label").text("Waoh! You guessed right.");
 				$("#submitguess").hide("slow");
+				// displaybar(diff);
 			}
 			else {
 				$("label").text("You are getting hot.");
+				// displaybar(diff);
 				feedback(initguess);
 			}	
 		}
+		// var diff = (100 - Math.abs(number - initguess));
+		// displaybar(diff);
 	});
 }
 
