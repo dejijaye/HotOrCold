@@ -3,10 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Hot or Cold | Nutty version</title>
-	<script type="text/javascript" src="app/app.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -18,14 +16,17 @@
 		<form id="center">
 			<fieldset id="boxgroup">
 				<legend id="legend">PLAY HERE</legend>
-				<label for="guess" >What's your guess?</label><br/>
+				<label for="guess" >Can you guess the secret number from 0 - 100</label><br/>
 				<input type="text" id="guess"><br/>
-				<button type="submit" id="submitguess" class="button">Submit</button>
-				<button type="submit" id="newgame" class="button">New Game</button>
+				<button type="button" id="submitguess" class="button" href="#">Submit</button>
+				<button type="button" id="newgame" class="button">New Game</button>
 			</fieldset>
 		</form>
 	</div>
-	<div id="comments"></div>
-	<div id="meter"></div>
+	<div id="meterbar">
+		<div id="meter"></div>
+	</div>
+	<script src="app/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="app/app.js"></script>
 </body>
 </html>

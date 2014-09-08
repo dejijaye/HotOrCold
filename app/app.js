@@ -1,60 +1,76 @@
+var number;
+var initguess;
+var newguess;
 
-// var previousguess;
-// var guess;
+$("#newgame").click(function(){
+		$("#submitguess").show("slow");
+		$("input").show("slow");
+		$("input").val("");
+		$("legend").text("Wanna Play?");
+		number = parseInt(Math.random() * 101);
+		console.log(number);
+});
 
-// window.onload = function () {
-// 	var number =parseInt(Math.random() * 100);
-// 	alert(number);
-// 	// var guess = prompt("What is your guess?");
-
-var number = parseInt(Math.random() * 101);
-// var guess;
-
-
-var feedback = function (num) {
+var feedback =function(num)  {
 	var previousguess = num;
-	var newguess = parseInt(prompt("whats your guess?","Enter a number between 1 and 100"), 10);
-	if(newguess === number) {
-		alert("Weldone!!! You guessed right.");
-	}
-	else if (Math.abs(number - newguess) < Math.abs(number - previousguess)) {
-		alert("You are hotter.");
-		feedback(newguess);
-	}
-	else {
-		alert("You are colder.");
-		feedback(newguess);
-	}
-}
-
-var checkguess = function() {
-	var guess = parseInt(prompt("what's your guess?","Enter a number between 1 and 100"), 10);
-	if ( guess !== " " && guess !== null && guess < 101 && !(guess < 0) ) {
-		if (guess === number) {
-				alert("Waoh! You guessed right.");
-			}	
-		else {
-			alert("You are hot. Please Guess again.");
-			 feedback(guess);
+	$("#submitguess").click(function() {
+		 newguess = parseInt($("#guess").val(), 10);
+		if ( isNaN(newguess) || newguess === " " || newguess === null || newguess > 101 || guess < 0) {
+			$("label").text("Enter a valid format.");
+			validate();
 		}
-	}
 
-	else {
-	alert("Please Match the requested format.");
-	checkguess();
-	// var guess = parseInt(prompt("whats your guess?","Enter a number between 1 and 100"));
-	}
+		else {
+
+			if (newguess === number) {
+				$("label").text("Waoh! You guessed right.");
+				$("#submitguess").hide("slow");
+			}
+
+			else if (Math.abs(number - newguess) < Math.abs(number - previousguess)) {
+				$("label").text("You are getting hotter.");
+				feedback(newguess);
+			}
+
+			else if (Math.abs(number - newguess) === Math.abs(number - previousguess)) {
+				$("label").text("You are warm.");
+				feedback(newguess);
+			}
+
+			else {
+				$("label").text("You are getting colder.");
+				feedback(newguess);
+			}
+		}
+	})
+
 }
 
-alert(number);
-checkguess();
-// var guess = parseInt(prompt("whats your guess?","Enter a number between 1 and 100"));
-// if (!(isNaN(guess)) && guess === " " && guess === null && guess < 101 ) {
-// 	checkguess();
-// }
+var validate = function() {
+	$("#newgame").click(function() {
+		$("label").text("What's your guess.");
+		$("#guess").val("");
+	})
+	$("#submitguess").click(function() {
+		initguess = parseInt($("#guess").val(), 10);
+		if ( isNaN(initguess) || initguess === " " || initguess === null || initguess > 101 || initguess < 0) {
+			
+			$("label").text("Enter a valid format.");
+			
+		}
 
-// else {
-// 	alert("Please Match the requested format.");
-// 	var guess = parseInt(prompt("whats your guess?","Enter a number between 1 and 100"));
-// 	checkguess();
-// }
+		else {
+			
+			if (initguess === number) {
+				$("label").text("Waoh! You guessed right.");
+				$("#submitguess").hide("slow");
+			}
+			else {
+				$("label").text("You are getting hot.");
+				feedback(initguess);
+			}	
+		}
+	});
+}
+
+validate();

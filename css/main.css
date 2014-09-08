@@ -1,7 +1,7 @@
 html {
 	height: 100%;
-	background: url(../image/congruent_pentagon.png) repeat;
-	background-size: cover;
+	background: url(../image/congruent_pentagon.png);
+/*	background-size: cover;*/
 }
 
 h1 {
@@ -30,17 +30,17 @@ h2 {
 }
 
 #inputbox {
-	/*width: 30%*/
+	font-size: 20px;
 	margin: 80px auto;
 	height: 30%;
 	text-align: center;
-	color: lightgrey;
+	color: tomato;
 }
 
 
 #boxgroup {
 	border: 1px solid red;
-	width: 300px;
+	width: 400px;
 	margin: 0 auto;
 	background-color: rgba(120,44,230,0.7);
 	padding: 50px;
@@ -52,13 +52,30 @@ h2 {
 	width: 50px;
 	text-align: center;
 	margin: 20px;
+	display: none;
 }
 
 button {
-	width: 120px;
+	width: 140px;
 	height: 60px;
 	border-radius: 8px;
-	margin: 10px;
-	font-size: 1.3em;
+	margin: 20px;
+	font-size: 1.1em;
 	text-align: center;
+}
+
+
+#submitguess {
+	display: none;
+}
+
+#submitguess:hover, #newgame:hover {
+	background-color: blue;
+	color: white;
+}
+
+legend {
+	font-size: 30px;
+	font-weight: bold;
+	color: tomato;
 }
