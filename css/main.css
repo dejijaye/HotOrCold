@@ -1,0 +1,82 @@
+html {
+	height: 100%;
+	background: url(../image/congruent_pentagon.png);
+/*	background-size: cover;*/
+}
+
+h1 {
+	font-size: 3em;
+	font-family: Arial, tahoma, sans-serif;
+	font-weight: bold;
+	text-align: center ;
+	color: white;
+	margin-top: 40px;
+}
+
+#hot {
+	color: red;
+}
+
+#cold {
+	color: blue;
+}
+
+h2 {
+	font-family: 'century gothic', sans-serif;
+	font-size: 1em;
+	color: turquoise;
+	text-align: center;
+	padding: 20px 20px;
+}
+
+#inputbox {
+	font-size: 20px;
+	margin: 80px auto;
+	height: 30%;
+	text-align: center;
+	color: tomato;
+}
+
+
+#boxgroup {
+	border: 1px solid red;
+	width: 400px;
+	margin: 0 auto;
+	background-color: rgba(120,44,230,0.7);
+	padding: 50px;
+	border-radius: 10px;
+}
+
+#guess {
+	height: 30px;
+	width: 50px;
+	text-align: center;
+	margin: 20px;
+	display: none;
+}
+
+button {
+	width: 140px;
+	height: 60px;
+	border-radius: 8px;
+	margin: 20px;
+	font-size: 1.1em;
+	text-align: center;
+}
+
+
+#submitguess {
+	display: none;
+}
+
+#submitguess:hover, #newgame:hover {
+	background-color: blue;
+	color: white;
+}
+
+
+legend {
+	font-size: 30px;
+	font-weight: bold;
+	color: tomato;
+}
