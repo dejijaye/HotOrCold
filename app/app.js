@@ -20,10 +20,9 @@ $("#newgame").click(function(){
 
 var feedback =function(num)  {
 	var previousguess = num;
-	newguess = $("#guess").val();
 	$("#submitguess").click(function() {
-		 
-		if ( isNaN(newguess) || newguess > 101 || newguess < 0 || typeof newguess === "string") {
+		 newguess = parseInt($("#guess").val(), 10);
+		if ( isNaN(newguess) || newguess > 100 || newguess < 0 || typeof newguess === "string") {
 			$("label").text("Enter a valid format.");
 			// validate();
 		}
@@ -65,8 +64,8 @@ var validate = function() {
 		$("#guess").val("");
 	})
 	$("#submitguess").click(function() {
-		initguess = $("#guess").val();
-		if ( isNaN(initguess) || initguess > 101 || initguess < 0 || typeof initguess === "string") {
+		initguess = parseInt($("#guess").val(), 10);
+		if ( isNaN(initguess) || initguess > 100 || initguess < 0 || typeof initguess === "string") {
 			
 			$("label").text("Enter a valid format.");
 			
